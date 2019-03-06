@@ -49,6 +49,19 @@ class testClassSortedFile(unittest.TestCase):
         with self.assertRaises(TypeError):
             fileMergeSort.set_output_data(True)
 
+    def test_correctExecutionHeapSort(self):
+        fileMergeSort = sortedFile()
+        fileMergeSort.set_input_data("eggs.csv")
+        fileMergeSort.initHeapSort()
+        fileMergeSort.set_output_data("output.csv")
+
+    def test_correctExecutionQuickSort(self):
+        fileMergeSort = sortedFile()
+        fileMergeSort.set_input_data("eggs.csv")
+        fileMergeSort.initQuickSort()
+        fileMergeSort.set_output_data("output.csv")
+
+
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(testClassSortedFile)
     unittest.TextTestRunner(verbosity=0).run(suite)
